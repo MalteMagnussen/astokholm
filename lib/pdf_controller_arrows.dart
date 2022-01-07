@@ -26,16 +26,14 @@ class MyArrow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned.fill(
-      child: IconButton(
-        iconSize: 30,
-        icon: Icon(direction == Direction.right
-            ? Icons.arrow_forward_ios
-            : Icons.arrow_back_ios),
-        onPressed: () {
-          direction == Direction.right ? goToNextPage() : goToPreviousPage();
-        },
-      ),
+    return IconButton(
+      iconSize: 30,
+      icon: Icon(direction == Direction.right
+          ? Icons.arrow_forward_ios
+          : Icons.arrow_back_ios),
+      onPressed: () {
+        direction == Direction.right ? goToNextPage() : goToPreviousPage();
+      },
     );
   }
 }
