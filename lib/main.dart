@@ -1,4 +1,5 @@
 import 'package:astokholm/profile_picture.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -79,81 +80,18 @@ class _MyHomePageState extends State<MyHomePage> {
                           textAlign: TextAlign.center,
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: RichText(
-                          text: TextSpan(
-                            children: [
-                              buildLink(
-                                'Technical University of Denmark',
-                                "https://www.dtu.dk/english",
-                                context,
-                              ),
-                              const TextSpan(text: '\n'),
-                              buildLink(
-                                'DTU Space: the National Space Institute',
-                                'https://www.space.dtu.dk/english',
-                                context,
-                              ),
-                              const TextSpan(text: '\n\n'),
-                              TextSpan(
-                                text: widget.helloText,
-                                style: Theme.of(context).textTheme.bodyText2,
-                              ),
-                              const TextSpan(text: '\n\n'),
-                              TextSpan(
-                                text: 'Visiting Researcher at the ',
-                                style: Theme.of(context).textTheme.headline6,
-                              ),
-                              buildLink(
-                                'European Space Agency (ESA)',
-                                'https://www.esa.int/',
-                                context,
-                              ),
-                              TextSpan(
-                                text: ', ',
-                                style: Theme.of(context).textTheme.bodyText2,
-                              ),
-                              buildLink(
-                                'ϕ-lab',
-                                'https://phiweek.esa.int/',
-                                context,
-                              ),
-                              const TextSpan(text: '\n\n'),
-                              TextSpan(
-                                text: widget.olab,
-                                style: Theme.of(context).textTheme.bodyText2,
-                              ),
-                              TextSpan(
-                                text: 'ϕ-sat-1.',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyText2
-                                    ?.apply(
-                                      color: Colors.blue,
-                                    ),
-                                mouseCursor: SystemMouseCursors.click,
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () {
-                                    launch(
-                                      'https://www.esa.int/Applications/Observing_the_Earth/Ph-sat',
-                                    );
-                                  },
-                              ),
-                              const TextSpan(text: '\n\n'),
-                              TextSpan(
-                                text:
-                                    'Preventing the next Titanic and enabling the Northern Trade Routes',
-                                style: Theme.of(context).textTheme.headline6,
-                              ),
-                              const TextSpan(text: '\n\n'),
-                              TextSpan(
-                                text: widget.titanic,
-                                style: Theme.of(context).textTheme.bodyText2,
-                              ),
-                            ],
+                      buildMainText(context),
+                      CachedNetworkImage(
+                        imageUrl: 'https://i.imgur.com/7DsgRkB.png',
+                        placeholder: (context, url) => const SizedBox(
+                          height: 400,
+                          child: Center(
+                            child: CircularProgressIndicator(),
                           ),
                         ),
+                        errorWidget: (context, url, error) =>
+                            const Icon(Icons.error),
+                        fit: BoxFit.cover,
                       ),
                     ],
                   ),
@@ -161,6 +99,82 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             );
           },
+        ),
+      ),
+    );
+  }
+
+  Padding buildMainText(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: RichText(
+        text: TextSpan(
+          children: [
+            buildLink(
+              'Technical University of Denmark',
+              "https://www.dtu.dk/english",
+              context,
+            ),
+            const TextSpan(text: '\n'),
+            buildLink(
+              'DTU Space: the National Space Institute',
+              'https://www.space.dtu.dk/english',
+              context,
+            ),
+            const TextSpan(text: '\n\n'),
+            TextSpan(
+              text: widget.helloText,
+              style: Theme.of(context).textTheme.bodyText2,
+            ),
+            const TextSpan(text: '\n\n'),
+            TextSpan(
+              text: 'Visiting Researcher at the ',
+              style: Theme.of(context).textTheme.headline6,
+            ),
+            buildLink(
+              'European Space Agency (ESA)',
+              'https://www.esa.int/',
+              context,
+            ),
+            TextSpan(
+              text: ', ',
+              style: Theme.of(context).textTheme.bodyText2,
+            ),
+            buildLink(
+              'ϕ-lab',
+              'https://phiweek.esa.int/',
+              context,
+            ),
+            const TextSpan(text: '\n\n'),
+            TextSpan(
+              text: widget.olab,
+              style: Theme.of(context).textTheme.bodyText2,
+            ),
+            TextSpan(
+              text: 'ϕ-sat-1.',
+              style: Theme.of(context).textTheme.bodyText2?.apply(
+                    color: Colors.blue,
+                  ),
+              mouseCursor: SystemMouseCursors.click,
+              recognizer: TapGestureRecognizer()
+                ..onTap = () {
+                  launch(
+                    'https://www.esa.int/Applications/Observing_the_Earth/Ph-sat',
+                  );
+                },
+            ),
+            const TextSpan(text: '\n\n'),
+            TextSpan(
+              text:
+                  'Preventing the next Titanic and enabling the Northern Trade Routes',
+              style: Theme.of(context).textTheme.headline6,
+            ),
+            const TextSpan(text: '\n\n'),
+            TextSpan(
+              text: widget.titanic,
+              style: Theme.of(context).textTheme.bodyText2,
+            ),
+          ],
         ),
       ),
     );
