@@ -1,0 +1,56 @@
+
+ACTIVE PROJECTS
+AI4Arctic Sea Ice Dataset
+
+The project involves developing a third version of an AI-ready dataset to train Deep Learning models for automatic sea ice charting. The new version will contain Synthetic Aperture Radar (SAR), Passive Microwave Radiometer (PMR), hand-drawn ice charts made by professional ice analysts (made from the SAR image), as well as auxiliary variables such as wind speed, surface temperature data. This dataset will be used to host an international competition on sea ice charting. The second version of the dataset is available here.
+
+Standalone Synthetic Aperture Radar (SAR) for Sea Ice Charting
+
+For automatic sea ice charting models, it can be advantageous to utilize independent SAR data over data fusion models, such as the combination of SAR and Passive Microwave Radiometers. This allows for a simple operational data pipeline, enabling ice chart production during periods when the secondary data source is not available – maximizing production and speed of ice charts. However, there are difficult scenarios and ambiguities, such as SAR noise, narrow fjords, wind-roughened seas, and homogenous and landfast sea ice, that must be solved with high reliability and certainty.
+
+Generative Adversarial Networks (GANs) for Sea Ice Charting
+
+Professional sea ice analysts who make sea ice charts do so by interpreting microwave Synthetic Aperture Radar (SAR) signatures and drawing polygons in a creative process with an associated set of rules. This is similar to the art of painting a portrait or a fixed object, constrained by creativity and a task without a singular correct solution. Therefore, a trivial deep learning approach that simply maps input to the output may not be a suitable technique for automating human endeavours. However, the contemporary developments of generative neural networks could be a potential avenue for automating this process in a creative and potentially unsupervised or semi-supervised way.
+
+PAST PROJECTS
+Sentinel-1 Synthetic Aperture Radar (SAR) interferometric analysis of permafrost thawing cycle in West Greenland.
+
+Global warming is increasing temperatures in the Arctic and causes previously frozen permafrost to melt and freeze. This creates a thawing and melting cycle with previous solid soil contracting and expanding, respectively. Incredibly, this centimeter elevation change can be monitored from space using SAR interferometry, comparing the distance which the radar wave travels. An analysis was carried out in Western Greenland, observing in some places up to 5 cm elevation change during summer.
+
+STUDENT PROJECTS
+https://projektbank.dtu.dk/en-us/Pages/Search.aspx?ds=1&adv=1&hso=1&Empid=dfc7b884-b884-e511-80dd-005056a057de
+I supervise a number of university student projects with future suggestions in the DTU Project Bank. Feel free to contact me, if you would like to have me as your supervisor or be involved as a co-supervisor.
+
+2022 Spring, Bachelor Thesis, Satellite Tracking with Neuromorphic / Event-Based Cameras
+
+2022 Spring, Bachelor Thesis, NO2 measurements from Sentinel-5P over Denmark
+
+2022 Spring, Master Project, Automated Marine Gravity Surveys in Danish Waters: Machine Learning and Automated Processing of Survey Lines
+
+2021 Fall, Master Project, Estimating sea ice concentrations from AMSR-2 microwave radiometer data using convolutional neural network (CNN)
+
+2021 Spring, Introductory Project, A comparison of Sentinel-5P NO2 measurements over Denmark before and after COVID-19
+
+2021 Spring, Introductory Project, Investigation of Sentinel-5P methane measurements over Denmark
+
+2019-2022, Engineering practices, first-semester bachelor course. Construct a digital instrument to measure pollution.
+
+
+PUBLICATIONS
+Andreas Stokholm, Sine M. Hvidegaard, René Forsberg, and Sebastian B. Simonsen. Validation of airborne and satellite altimetry data by arctic trucks citizen science. Geological Survey of Denmark and Greenland (geus) Bulletin, 47(1):5369, 2021.
+
+
+HOME
+Ph.D. student in AI and Earth Observation
+
+Technical University of Denmark, DTU Space, the National Space Institute
+
+Hi, my name is Andreas, an Electrical Engineer and a generalist by nature. I love diverse challenges within AI, data from satellites, sensors, and advanced computing for Earth and societal science. I also have a strong passion for entrepreneurship, investing, and public science communication.
+
+Visiting Researcher at the European Space Agency (ESA), ϕ-lab
+
+The ϕ-lab is ESA’s innovative research laboratory that specializes in combining AI and data from satellites to monitor and further understand the Earth. This includes new space applications, AI edge computing in space, and new computing paradigms and the lab spearheaded the first satellite with onboard AI, ϕ-sat-1.
+
+Preventing the next Titanic and enabling the Northern Trade Routes
+
+For the past 50 years, the Danish Meteorological Institute has drawn sea ice charts by hand to help ships in the Arctic navigating safely and find the quickest route through the sea ice. This task is done daily due to the dynamic nature of sea ice,. It is a time-consuming and resource-intensive task that we hope to automate using Deep Learning and satellite data. Automating the production has the potential to increase the use of captured satellite imagery, deliver faster and more frequent map updates while providing a higher level of detail in the maps. Expanding the geographical coverage can help and further enable the Northern Trade Routes.
