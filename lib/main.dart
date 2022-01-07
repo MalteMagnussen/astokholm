@@ -3,6 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:native_pdf_view/native_pdf_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -48,6 +49,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final pdfController = PdfController(
+    document: PdfDocument.openAsset('assets/sample.pdf'),
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,6 +97,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         errorWidget: (context, url, error) =>
                             const Icon(Icons.error),
                         fit: BoxFit.cover,
+                      ),
+                      PdfView(
+                        controller: pdfController,
                       ),
                     ],
                   ),
