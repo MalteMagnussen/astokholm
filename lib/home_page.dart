@@ -47,12 +47,17 @@ class _MyHomePageState extends State<MyHomePage> {
               MyApp.themeNotifier.value == ThemeMode.light
                   ? Icons.dark_mode
                   : Icons.light_mode,
+              color: MyApp.themeNotifier.value == ThemeMode.light
+                  ? Colors.black
+                  : Colors.white,
             ),
             onPressed: () {
-              MyApp.themeNotifier.value =
-                  MyApp.themeNotifier.value == ThemeMode.light
-                      ? ThemeMode.dark
-                      : ThemeMode.light;
+              setState(() {
+                MyApp.themeNotifier.value =
+                    MyApp.themeNotifier.value == ThemeMode.light
+                        ? ThemeMode.dark
+                        : ThemeMode.light;
+              });
             },
           )
         ],
@@ -73,7 +78,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         height: constraints.maxHeight * 0.5,
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.only(
+                          bottom: 8.0,
+                          top: 15.0,
+                        ),
                         child: Text(
                           'Ph.D. student in AI and Earth Observation',
                           style: Theme.of(context).textTheme.headline5,
