@@ -8,6 +8,7 @@ import 'home_page.dart';
 // Long list of titles, with Hero animations.
 
 // TODO - Add email somewhere.
+// TODO - Add phone number somewhere.
 // TODO - Add Publications
 
 void main() {

@@ -66,17 +66,20 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       buildMainText(context),
-                      CachedNetworkImage(
-                        imageUrl: 'https://i.imgur.com/7DsgRkB.png',
-                        placeholder: (context, url) => const SizedBox(
-                          height: 400,
-                          child: Center(
-                            child: CircularProgressIndicator(),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: CachedNetworkImage(
+                          imageUrl: 'https://i.imgur.com/7DsgRkB.png',
+                          placeholder: (context, url) => const SizedBox(
+                            height: 400,
+                            child: Center(
+                              child: CircularProgressIndicator(),
+                            ),
                           ),
+                          errorWidget: (context, url, error) =>
+                              const Icon(Icons.error),
+                          fit: BoxFit.cover,
                         ),
-                        errorWidget: (context, url, error) =>
-                            const Icon(Icons.error),
-                        fit: BoxFit.cover,
                       ),
                       CV(
                         width: width,
@@ -160,6 +163,32 @@ class _MyHomePageState extends State<MyHomePage> {
             const TextSpan(text: '\n\n'),
             TextSpan(
               text: widget.titanic,
+              style: Theme.of(context).textTheme.bodyText2,
+            ),
+            const TextSpan(text: '\n\n'),
+            TextSpan(
+              text: 'Publication:',
+              style: Theme.of(context).textTheme.headline6,
+            ),
+            const TextSpan(text: '\n'),
+            TextSpan(
+              text:
+                  'Andreas Stokholm, Sine M. Hvidegaard, René Forsberg, and Sebastian B. Simonsen.',
+              style: Theme.of(context).textTheme.bodyText2,
+            ),
+            const TextSpan(text: '\n'),
+            TextSpan(
+              // Cursive
+              text:
+                  'Validation of airborne and satellite altimetry data by arctic trucks citizen science.',
+              style: Theme.of(context).textTheme.bodyText2?.apply(
+                    fontStyle: FontStyle.italic,
+                  ),
+            ),
+            const TextSpan(text: '\n'),
+            TextSpan(
+              text:
+                  'Geological Survey of Denmark and Greenland (geus) Bulletin, 47(1):5369, 2021.',
               style: Theme.of(context).textTheme.bodyText2,
             ),
           ],
