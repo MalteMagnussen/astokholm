@@ -17,7 +17,8 @@ class ProfilePicture extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(top: 0, bottom: 0, left: 10, right: 15),
       child: CachedNetworkImage(
-        imageUrl: "https://i.imgur.com/7UV0EdQ.png",
+        imageUrl:
+            'https://i.imgur.com/b9y2su1.jpg', //"https://i.imgur.com/7UV0EdQ.png",
         placeholder: (context, url) => SizedBox(
           height: height,
           child: const Center(
@@ -62,7 +63,7 @@ class ProfilePicture extends StatelessWidget {
               shape: BoxShape.circle,
               image: DecorationImage(
                 image: imageProvider,
-                fit: BoxFit.contain,
+                fit: BoxFit.scaleDown,
               ),
             ),
           ),

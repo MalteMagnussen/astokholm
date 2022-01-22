@@ -54,3 +54,4 @@ The ϕ-lab is ESA’s innovative research laboratory that specializes in combini
 Preventing the next Titanic and enabling the Northern Trade Routes
 
 For the past 50 years, the Danish Meteorological Institute has drawn sea ice charts by hand to help ships in the Arctic navigating safely and find the quickest route through the sea ice. This task is done daily due to the dynamic nature of sea ice,. It is a time-consuming and resource-intensive task that we hope to automate using Deep Learning and satellite data. Automating the production has the potential to increase the use of captured satellite imagery, deliver faster and more frequent map updates while providing a higher level of detail in the maps. Expanding the geographical coverage can help and further enable the Northern Trade Routes.
+
