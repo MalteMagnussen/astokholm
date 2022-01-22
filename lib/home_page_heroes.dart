@@ -23,7 +23,6 @@ class _HomePageHeroesState extends State<HomePageHeroes> {
     return Wrap(
       alignment: WrapAlignment.spaceEvenly,
       direction: Axis.horizontal,
-      runSpacing: 10,
       spacing: 10,
       children: heroes.map<Widget>((hero) {
         return SizedBox(
@@ -31,9 +30,12 @@ class _HomePageHeroesState extends State<HomePageHeroes> {
           width: 400,
           child: Column(
             children: <Widget>[
-              Text(
-                hero.title,
-                style: Theme.of(context).textTheme.headline6,
+              Padding(
+                padding: const EdgeInsets.only(bottom: 4.0),
+                child: Text(
+                  hero.title,
+                  style: Theme.of(context).textTheme.headline6,
+                ),
               ),
               InkWell(
                 mouseCursor: MaterialStateMouseCursor.clickable,

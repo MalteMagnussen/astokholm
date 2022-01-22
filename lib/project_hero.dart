@@ -1,5 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'heroes.dart';
 
@@ -40,7 +42,19 @@ class ProjectHero extends StatelessWidget {
                         const SizedBox(height: 10),
                         Text(hero.desc,
                             style: Theme.of(context).textTheme.bodyText2),
-                        const SizedBox(height: 20),
+                        const SizedBox(height: 10),
+                        hero.link != ""
+                            ? Column(
+                                children: [
+                                  buildLink(
+                                    hero.linkText,
+                                    hero.link,
+                                    context,
+                                  ),
+                                  const SizedBox(height: 10),
+                                ],
+                              )
+                            : Container(),
                         Hero(
                           tag: hero.tag,
                           child: CachedNetworkImage(
@@ -64,6 +78,26 @@ class ProjectHero extends StatelessWidget {
             );
           },
         ),
+      ),
+    );
+  }
+
+  RichText buildLink(
+    String text,
+    String link,
+    BuildContext context,
+  ) {
+    return RichText(
+      text: TextSpan(
+        text: text,
+        style: Theme.of(context).textTheme.headline6?.apply(
+              color: Colors.blue,
+            ),
+        mouseCursor: SystemMouseCursors.click,
+        recognizer: TapGestureRecognizer()
+          ..onTap = () {
+            launch(link);
+          },
       ),
     );
   }

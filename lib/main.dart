@@ -4,15 +4,6 @@ import 'package:flutter/material.dart';
 import 'home_page.dart';
 import 'heroes.dart';
 
-// TODO - Add Projects.
-// Add them as just titles, with Hero maybe? https://www.youtube.com/watch?v=Be9UH1kXFDw
-// Refactor the others to the same thing.
-// Long list of titles, with Hero animations.
-
-// TODO - Add email somewhere.
-// TODO - Add phone number somewhere.
-// TODO - Add Publications
-
 void main() {
   runApp(const MyApp());
 }
@@ -25,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Andreas Stokholm',
-      theme: ThemeData.dark(),
+      theme: ThemeData.dark(), // TODO - add button to change theme
       // https://docs.flutter.dev/cookbook/design/themes
       initialRoute: '/',
       routes: {
@@ -35,6 +26,7 @@ class MyApp extends StatelessWidget {
         gan.tag: (context) => ProjectHero(hero: gan),
         ai4.tag: (context) => ProjectHero(hero: ai4),
         sentinel.tag: (context) => ProjectHero(hero: sentinel),
+        student.tag: (context) => ProjectHero(hero: student),
       },
     );
   }

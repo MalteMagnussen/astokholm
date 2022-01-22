@@ -1,9 +1,5 @@
 import 'package:astokholm/pdf_controller_arrows.dart';
-import 'package:astokholm/profile_picture.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:native_pdf_view/native_pdf_view.dart';
 import 'package:flutter/foundation.dart';
 
@@ -19,6 +15,7 @@ class CV extends StatefulWidget {
   _CVState createState() => _CVState();
 }
 
+// TODO - https://stackoverflow.com/a/61395912/11255140
 class _CVState extends State<CV> {
   int _actualPageNumber = 1, _allPagesCount = 3;
   final pdfController = PdfController(
