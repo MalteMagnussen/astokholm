@@ -66,21 +66,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       buildMainText(context),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: CachedNetworkImage(
-                          imageUrl: 'https://i.imgur.com/7DsgRkB.png',
-                          placeholder: (context, url) => const SizedBox(
-                            height: 400,
-                            child: Center(
-                              child: CircularProgressIndicator(),
-                            ),
-                          ),
-                          errorWidget: (context, url, error) =>
-                              const Icon(Icons.error),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
+                      // Row with three Hero images
+                      //
                       CV(
                         width: width,
                       ),
@@ -208,6 +195,30 @@ class _MyHomePageState extends State<MyHomePage> {
         ..onTap = () {
           launch(link);
         },
+    );
+  }
+}
+
+class TeamPhoto extends StatelessWidget {
+  const TeamPhoto({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: CachedNetworkImage(
+        imageUrl: 'https://i.imgur.com/7DsgRkB.png',
+        placeholder: (context, url) => const SizedBox(
+          height: 400,
+          child: Center(
+            child: CircularProgressIndicator(),
+          ),
+        ),
+        errorWidget: (context, url, error) => const Icon(Icons.error),
+        fit: BoxFit.cover,
+      ),
     );
   }
 }
