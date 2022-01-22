@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'heroes.dart';
@@ -18,26 +19,36 @@ class HomePageHeroes extends StatefulWidget {
 class _HomePageHeroesState extends State<HomePageHeroes> {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      // Heroes are in a row.
+    return Wrap(
+      alignment: WrapAlignment.spaceEvenly,
+      direction: Axis.horizontal,
+      runSpacing: 10,
+      spacing: 10,
       children: heroes.map<Widget>((hero) {
-        return Hero(
-          tag: hero.key,
-          child: GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, hero.key);
-            },
-            child: Container(
-              margin: const EdgeInsets.all(10),
-              child: Column(
-                children: <Widget>[
-                  Image.network(hero.image),
-                  Text(
-                    hero.title,
-                    style: Theme.of(context).textTheme.headline6,
+        return SizedBox(
+          height: 400,
+          width: 400,
+          child: Hero(
+            tag: hero.key,
+            child: Column(
+              children: <Widget>[
+                Text(
+                  hero.title,
+                  style: Theme.of(context).textTheme.headline6,
+                ),
+                CachedNetworkImage(
+                  height: 300,
+                  imageUrl: hero.image,
+                  placeholder: (context, url) => const SizedBox(
+                    height: 300,
+                    child: Center(
+                      child: CircularProgressIndicator(),
+                    ),
                   ),
-                ],
-              ),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                  fit: BoxFit.contain,
+                ),
+              ],
             ),
           ),
         );

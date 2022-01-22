@@ -1,3 +1,4 @@
+import 'package:astokholm/home_page_heroes.dart';
 import 'package:astokholm/profile_picture.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/gestures.dart';
@@ -67,7 +68,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       buildMainText(context),
                       // Row with three Hero images
-                      //
+                      Text(
+                        '\nProjects\n',
+                        style: Theme.of(context).textTheme.headline6,
+                      ),
+                      const HomePageHeroes(),
                       CV(
                         width: width,
                       ),

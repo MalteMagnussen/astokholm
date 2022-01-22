@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 const String sarTitle = "Standalone Synthetic Aperture Radar (SAR)";
 const String sarImage = "https://i.imgur.com/xlf4B8p.png";
 const String sarKey = "SAR";

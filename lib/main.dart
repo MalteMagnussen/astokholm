@@ -26,6 +26,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark(),
       // https://docs.flutter.dev/cookbook/design/themes
       home: const MyHomePage(title: 'Andreas Stokholm - CV and Portfolio'),
+      initialRoute: '/',
+      routes: {
+        '/': (context) =>
+            const MyHomePage(title: 'Andreas Stokholm - CV and Portfolio'),
+        '/projects': (context) => ProjectsPage(),
+      },
     );
   }
 }
