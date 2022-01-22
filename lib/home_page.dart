@@ -67,10 +67,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       buildMainText(context),
-                      // Row with three Hero images
                       Text(
                         '\nProjects\n',
-                        style: Theme.of(context).textTheme.headline6,
+                        style: Theme.of(context).textTheme.headline4,
                       ),
                       const HomePageHeroes(),
                       CV(

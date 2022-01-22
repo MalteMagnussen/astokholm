@@ -37,7 +37,7 @@ class _CVState extends State<CV> {
           padding: const EdgeInsets.only(top: 10.0),
           child: Text(
             'CV',
-            style: Theme.of(context).textTheme.headline5,
+            style: Theme.of(context).textTheme.headline4,
             textAlign: TextAlign.center,
           ),
         ),

@@ -1,6 +1,8 @@
+import 'package:astokholm/project_hero.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';
+import 'heroes.dart';
 
 // TODO - Add Projects.
 // Add them as just titles, with Hero maybe? https://www.youtube.com/watch?v=Be9UH1kXFDw
@@ -25,12 +27,14 @@ class MyApp extends StatelessWidget {
       title: 'Andreas Stokholm',
       theme: ThemeData.dark(),
       // https://docs.flutter.dev/cookbook/design/themes
-      home: const MyHomePage(title: 'Andreas Stokholm - CV and Portfolio'),
       initialRoute: '/',
       routes: {
         '/': (context) =>
             const MyHomePage(title: 'Andreas Stokholm - CV and Portfolio'),
-        '/projects': (context) => ProjectsPage(),
+        sar.tag: (context) => ProjectHero(hero: sar),
+        gan.tag: (context) => ProjectHero(hero: gan),
+        ai4.tag: (context) => ProjectHero(hero: ai4),
+        sentinel.tag: (context) => ProjectHero(hero: sentinel),
       },
     );
   }
