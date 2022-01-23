@@ -1,7 +1,7 @@
-import 'package:astokholm/projects/project_hero.dart';
+import 'package:astokholm/projects/project_view.dart';
 import 'package:flutter/material.dart';
 
-import 'homepage/home_page.dart';
+import 'homepage/home_page_view.dart';
 import 'projects/heroes.dart';
 
 void main() {
