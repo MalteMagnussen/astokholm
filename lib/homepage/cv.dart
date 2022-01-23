@@ -1,4 +1,4 @@
-import 'package:astokholm/pdf_controller_arrows.dart';
+import 'package:astokholm/homepage/pdf_controller_arrows.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:native_pdf_view/native_pdf_view.dart';

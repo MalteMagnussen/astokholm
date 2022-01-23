@@ -1,12 +1,12 @@
-import 'package:astokholm/home_page_heroes.dart';
-import 'package:astokholm/profile_picture.dart';
+import 'package:astokholm/homepage/profile_picture.dart';
+import 'package:astokholm/projects/home_page_heroes.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'cv.dart';
-import 'main.dart';
+import '../main.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);

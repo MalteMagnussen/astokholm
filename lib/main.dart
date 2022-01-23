@@ -1,8 +1,8 @@
-import 'package:astokholm/project_hero.dart';
+import 'package:astokholm/projects/project_hero.dart';
 import 'package:flutter/material.dart';
 
-import 'home_page.dart';
-import 'heroes.dart';
+import 'homepage/home_page.dart';
+import 'projects/heroes.dart';
 
 void main() {
   runApp(const MyApp());
