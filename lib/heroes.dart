@@ -1,10 +1,12 @@
-const String sarTitle = "Standalone Synthetic Aperture Radar (SAR)";
+const String sarTitle =
+    "Standalone Synthetic Aperture Radar (SAR) for Sea Ice Charting";
 const String sarImage = "https://i.imgur.com/xlf4B8p.png";
 const String sarKey = "SAR";
 const String sarDesc =
     "For automatic sea ice charting models, it can be advantageous to utilize independent SAR data over data fusion models, such as the combination of SAR and Passive Microwave Radiometers. This allows for a simple operational data pipeline, enabling ice chart production during periods when the secondary data source is not available – maximizing production and speed of ice charts. However, there are difficult scenarios and ambiguities, such as SAR noise, narrow fjords, wind-roughened seas, and homogenous and landfast sea ice, that must be solved with high reliability and certainty.";
 
-const String ganTitle = "Generative Adversarial Networks (GANs)";
+const String ganTitle =
+    "Generative Adversarial Networks (GANs) for Sea Ice Charting";
 const String ganImage = "https://i.imgur.com/ZSGu0Ir.png";
 const String ganKey = "GAN";
 const String ganDesc =
