@@ -55,19 +55,29 @@ class ProjectHero extends StatelessWidget {
                                 ],
                               )
                             : Container(),
-                        Hero(
-                          tag: hero.tag,
-                          child: CachedNetworkImage(
-                            imageUrl: hero.image,
-                            placeholder: (context, url) => const SizedBox(
-                              height: 400,
-                              child: Center(
-                                child: CircularProgressIndicator(),
+                        InkWell(
+                          // Go back to home page
+                          onTap: () {
+                            if (Navigator.canPop(context)) {
+                              Navigator.pop(context);
+                            } else {
+                              Navigator.pushReplacementNamed(context, '/');
+                            }
+                          },
+                          child: Hero(
+                            tag: hero.tag,
+                            child: CachedNetworkImage(
+                              imageUrl: hero.image,
+                              placeholder: (context, url) => const SizedBox(
+                                height: 400,
+                                child: Center(
+                                  child: CircularProgressIndicator(),
+                                ),
                               ),
+                              errorWidget: (context, url, error) =>
+                                  const Icon(Icons.error),
+                              fit: BoxFit.contain,
                             ),
-                            errorWidget: (context, url, error) =>
-                                const Icon(Icons.error),
-                            fit: BoxFit.contain,
                           ),
                         ),
                       ],
