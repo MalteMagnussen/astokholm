@@ -39,7 +39,9 @@ class _MyAppState extends State<MyApp> {
               appBar: AppBar(
                 title: const Text('Andreas Stokholm'),
                 centerTitle: true,
+                // Smaller tabbar
                 bottom: const TabBar(
+                  isScrollable: true,
                   tabs: [
                     Tab(text: 'Home'),
                     Tab(text: 'Projects'),
