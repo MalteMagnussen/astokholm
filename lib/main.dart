@@ -1,4 +1,6 @@
+import 'package:astokholm/projects/home_page_heroes.dart';
 import 'package:astokholm/projects/project_view.dart';
+import 'package:astokholm/publications/publications_view.dart';
 import 'package:flutter/material.dart';
 
 import 'homepage/home_page_view.dart';
@@ -8,8 +10,14 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   static final ValueNotifier<ThemeMode> themeNotifier =
       ValueNotifier(ThemeMode.dark);
 
@@ -25,9 +33,50 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           themeMode: currentMode,
           initialRoute: '/',
+          home: DefaultTabController(
+            length: 3,
+            child: Scaffold(
+              appBar: AppBar(
+                title: const Text('Andreas Stokholm'),
+                centerTitle: true,
+                bottom: const TabBar(
+                  tabs: [
+                    Tab(text: 'Home'),
+                    Tab(text: 'Projects'),
+                    Tab(text: 'Publications'),
+                  ],
+                ),
+                actions: [
+                  IconButton(
+                    icon: Icon(
+                      themeNotifier.value == ThemeMode.light
+                          ? Icons.dark_mode
+                          : Icons.light_mode,
+                      color: themeNotifier.value == ThemeMode.light
+                          ? Colors.black
+                          : Colors.white,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        themeNotifier.value =
+                            themeNotifier.value == ThemeMode.light
+                                ? ThemeMode.dark
+                                : ThemeMode.light;
+                      });
+                    },
+                  )
+                ],
+              ),
+              body: const TabBarView(
+                children: [
+                  HomePageView(),
+                  ProjectsView(),
+                  PublicationsView(),
+                ],
+              ),
+            ),
+          ),
           routes: {
-            '/': (context) =>
-                const MyHomePage(title: 'Andreas Stokholm - CV and Portfolio'),
             sar.tag: (context) => ProjectHero(hero: sar),
             gan.tag: (context) => ProjectHero(hero: gan),
             ai4.tag: (context) => ProjectHero(hero: ai4),
