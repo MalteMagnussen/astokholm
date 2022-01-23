@@ -21,6 +21,12 @@ class _ProjectsViewState extends State<ProjectsView> {
   Widget build(BuildContext context) {
     return ListView(
       children: [
+        Center(
+          child: Text(
+            '\nClick an image to see more details\n',
+            style: Theme.of(context).textTheme.headline5,
+          ),
+        ),
         Wrap(
           alignment: WrapAlignment.spaceEvenly,
           direction: Axis.horizontal,

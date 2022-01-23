@@ -147,7 +147,6 @@ class _HomePageViewState extends State<HomePageView> {
               text: widget.titanic,
               style: Theme.of(context).textTheme.bodyText2,
             ),
-            const TextSpan(text: '\n\n'),
           ],
         ),
       ),
