@@ -6,12 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'cv.dart';
-import '../main.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class HomePageView extends StatefulWidget {
+  const HomePageView({Key? key}) : super(key: key);
 
-  final String title;
   final String helloText =
       'Hi, my name is Andreas, an Electrical Engineer and a generalist by nature. '
       'I love diverse challenges within AI, data from satellites, sensors, and advanced computing for Earth and societal science. '
@@ -29,39 +27,15 @@ class MyHomePage extends StatefulWidget {
       'Expanding the geographical coverage can help and further enable the Northern Trade Routes.';
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HomePageView> createState() => _HomePageViewState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomePageViewState extends State<HomePageView> {
   final double width = 1000;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Andreas Stokholm'),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            icon: Icon(
-              MyApp.themeNotifier.value == ThemeMode.light
-                  ? Icons.dark_mode
-                  : Icons.light_mode,
-              color: MyApp.themeNotifier.value == ThemeMode.light
-                  ? Colors.black
-                  : Colors.white,
-            ),
-            onPressed: () {
-              setState(() {
-                MyApp.themeNotifier.value =
-                    MyApp.themeNotifier.value == ThemeMode.light
-                        ? ThemeMode.dark
-                        : ThemeMode.light;
-              });
-            },
-          )
-        ],
-      ),
       body: SafeArea(
         child: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constraints) {
@@ -89,11 +63,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       buildMainText(context),
-                      Text(
-                        '\nProjects\n',
-                        style: Theme.of(context).textTheme.headline4,
-                      ),
-                      const HomePageHeroes(),
                       CV(
                         width: width,
                       ),
@@ -179,31 +148,6 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.bodyText2,
             ),
             const TextSpan(text: '\n\n'),
-            TextSpan(
-              text: 'Publication:',
-              style: Theme.of(context).textTheme.headline6,
-            ),
-            const TextSpan(text: '\n'),
-            TextSpan(
-              text:
-                  'Andreas Stokholm, Sine M. Hvidegaard, René Forsberg, and Sebastian B. Simonsen.',
-              style: Theme.of(context).textTheme.bodyText2,
-            ),
-            const TextSpan(text: '\n'),
-            TextSpan(
-              // Cursive
-              text:
-                  'Validation of airborne and satellite altimetry data by arctic trucks citizen science.',
-              style: Theme.of(context).textTheme.bodyText2?.apply(
-                    fontStyle: FontStyle.italic,
-                  ),
-            ),
-            const TextSpan(text: '\n'),
-            TextSpan(
-              text:
-                  'Geological Survey of Denmark and Greenland (geus) Bulletin, 47(1):5369, 2021.',
-              style: Theme.of(context).textTheme.bodyText2,
-            ),
           ],
         ),
       ),
